@@ -8,7 +8,7 @@ type DomainUpdate struct {
 	// Whether or not the domain should be locked to prevent transfers
 	Locked bool `json:"locked,omitempty"`
 	// Fully-qualified domain names for Name Servers to associate with the domain
-	NameServers []ErrorUnknown `json:"nameServers,omitempty"`
+	NameServers []string `json:"nameServers,omitempty"`
 	// Whether or not the domain should be configured to automatically renew
 	RenewAuto bool `json:"renewAuto,omitempty"`
 	// Reseller subaccount shopperid who can manage the domain
