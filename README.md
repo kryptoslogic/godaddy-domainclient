@@ -32,6 +32,8 @@ apiConfig.AddDefaultHeader("Authorization", authString)
 var apiClient = godaddy.NewAPIClient(apiConfig)
 ```
 
+A more complete example can be found [here](https://gist.github.com/JamieH/4f297a669be9435ec193c67390cc9b47)
+
 ## Documentation for API Endpoints
 
 All URIs are relative to *https://api.ote-godaddy.com*
