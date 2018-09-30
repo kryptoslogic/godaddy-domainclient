@@ -14,6 +14,24 @@ Put the package under your project folder and add the following in import:
 import "./godaddy"
 ```
 
+By default this library uses the sandbox API, if you wish to use the production API set the Configuration BasePath to `https://api.godaddy.com/`
+
+An example of the library:
+```golang
+var apiConfig = godaddy.NewConfiguration()
+// Test
+//apiConfig.BasePath = "https://api.ote-godaddy.com/"
+
+// Prod
+apiConfig.BasePath = "https://api.godaddy.com/"
+
+// Set auth
+var authString = fmt.Sprintf("sso-key %s:%s", "apiKeyHere", "apiSecretHere")
+apiConfig.AddDefaultHeader("Authorization", authString)
+
+var apiClient = godaddy.NewAPIClient(apiConfig)
+```
+
 ## Documentation for API Endpoints
 
 All URIs are relative to *https://api.ote-godaddy.com*
@@ -85,11 +103,6 @@ Class | Method | HTTP request | Description
  - [VerificationDomainName](docs/VerificationDomainName.md)
  - [VerificationRealName](docs/VerificationRealName.md)
  - [VerificationsDomain](docs/VerificationsDomain.md)
-
-
-## Documentation For Authorization
- Endpoints do not require authorization.
-
 
 ## Author
 
